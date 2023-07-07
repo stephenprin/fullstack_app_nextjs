@@ -3,7 +3,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-   
 
 }
 .logo{
@@ -14,7 +13,11 @@
     display: flex;
     align-items: center;
     gap: 1.3rem;
+    transition: all 0.4s ease-in-out;
 
+}
+.links .link:hover{
+    color: #8fd8fa;
 }
 .logout{
     padding: 1rem 1.5rem;
@@ -26,5 +29,5 @@
     transition: all 0.4s ease;
 }
 .logout:hover{
-    transform: scale(1.05);
+    transform: scale(1.12);
 }
