@@ -1,0 +1,26 @@
+.mainTitle{
+    font-size: 5rem;
+}
+.selectTitle{
+    margin: 20px 0;
+}
+
+.items{
+    display: flex;
+    gap:3rem;
+}
+  .item{
+    border: 3px solid #bbb;
+    border-radius: 0.6rem;
+    height: 400px;
+    width: 300px;
+    position: relative;
+  }
+  .title{
+    position: absolute;
+    right:15px;
+    bottom: 15px;
+    font-size: 1.6rem;
+    font-weight: 400;
+
+  }
