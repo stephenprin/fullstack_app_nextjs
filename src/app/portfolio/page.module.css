@@ -3,6 +3,7 @@
 }
 .selectTitle{
     margin: 20px 0;
+    font-size: 1.5rem;
 }
 
 .items{
@@ -15,6 +16,8 @@
     height: 400px;
     width: 300px;
     position: relative;
+    background-size: cover !important;
+    
   }
   .title{
     position: absolute;
@@ -22,5 +25,18 @@
     bottom: 15px;
     font-size: 1.6rem;
     font-weight: 400;
+    transition: all 0.2s ease-in-out;
 
+  }
+  .item:nth-child(1){
+      background: url("/images/websites.jpg") no-repeat;
+  }
+  .item:nth-child(2){
+    background: url("/images/illustration.png") no-repeat;
+  }
+  .item:nth-child(3){
+    background: url("/images/apps.jpg") no-repeat;
+  }
+  .item:hover .title{
+    color: rgb(79, 195, 195);
   }
