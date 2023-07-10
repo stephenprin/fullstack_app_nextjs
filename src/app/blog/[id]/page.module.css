@@ -1,0 +1,53 @@
+
+.top {
+    display: flex;
+    gap: 3rem;
+  }
+  
+  .info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+  }
+  .title{
+    font-size: 35px;
+  }
+  
+  .desc{
+    font-size: 18px;
+    font-weight: 300;
+    text-align: justify;
+  }
+  
+  .author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: rgb(9, 137, 169);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }  
+  .avatar {
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+
+
+
+.imgContainer{
+    width: 500px;
+    height: 300px;
+    position: relative;
+}
+.image{
+    object-fit: contain;
+}
+.content {
+    margin-top: 50px;
+    font-size: 20px;
+    font-weight: 300;
+    color: #999;
+    text-align: justify;
+  }
