@@ -8,7 +8,9 @@ import {notFound} from 'next/navigation'
 
 
 async function getData() {
-  const res = await fetch('https://jsonplaceholder.typicode.com/posts')
+  const res = await fetch('http://localhost:5000/api/posts', {
+    cache: 'no-cache'
+  })
 
   if (!res.ok) {
     return notFound()
@@ -17,18 +19,21 @@ async function getData() {
   return res.json()
 } 
 
+
+
 const Blog = async() => {
-  const data= await getData()
+  const {data} = await getData()
+ 
   return (
     <div className={styles.mainContainer}>
       {data.map((item)=>(
-         <Link href='/blog/id' className={styles.container} key={item.id}>
+         <Link href={`blog/${item.id}`} className={styles.container} key={item.id}>
          <div className={styles.imgContainer}>
-             <Image src={Design} fill={true} alt="Design" className={styles.image}  />
+            <Image src={item.img} alt="Design" className={styles.image}  width={600} height={350} />
            </div>
            <div className={styles.content}>
             <h1 className={styles.title}>{item.title}</h1>
-             <p className={styles.desc}>payment processing</p>
+            <p className={styles.desc}>{ item.description}</p>
              
            </div>    
          </Link>

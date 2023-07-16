@@ -4,6 +4,12 @@ import People from 'public/images/people.jpg'
 import Image from 'next/image'
 import Button from '@/components/button/Button'
 
+
+export const metadata = {
+  title: 'About page',
+  description: 'Get to know more about us',
+}
+
 const About = () => {
   return (
     <div className={styles.container}>

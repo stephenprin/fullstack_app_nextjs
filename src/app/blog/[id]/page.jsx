@@ -8,7 +8,7 @@ import {notFound} from 'next/navigation';
 
 
 async function getData(id) {
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`,
+  const res = await fetch(`http://localhost:5000/api/posts/${id}`,
   { cache: 'no-store' }
   )
 
@@ -18,9 +18,16 @@ async function getData(id) {
  
   return res.json()
 }
+export async function generateMetadata({ params }) {
+  const post= await getData(params.id)
+  return {
+    title: post.title,
+    description: post.description
+  }
+}
 
 const BlogPost = async({params}) => {
-  const data=  await getData(params.id)
+  const { data} =  await getData(params.id)
   return (
     <div className={styles.container}>
       <div className={styles.top}>
@@ -29,11 +36,7 @@ const BlogPost = async({params}) => {
            {data.title}
           </h1>
           <p className={styles.desc}>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab
-            corporis praesentium deserunt numquam, placeat ratione dolor
-            blanditiis quia doloribus hic quod quaerat voluptatibus assumenda
-            sunt incidunt quidem unde illo perspiciatis quos omnis officia.
-            Officia, nostrum?Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet illo dolores culpa? Quos minus animi maxime nesciunt accusamus aspernatur explicabo.
+            {data.content}
           </p>
           <div className={styles.author}>
             <Image
@@ -43,7 +46,7 @@ const BlogPost = async({params}) => {
               height={40}
               className={styles.avatar}
             />
-            <span className={styles.username}>Prince Nmezi</span>
+            <span className={styles.username}>{data.userName }</span>
           </div>
         </div>
         <div className={styles.imgContainer}>
@@ -57,16 +60,7 @@ const BlogPost = async({params}) => {
       </div>
       <div className={styles.content}>
         <p className={styles.text}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime impedit corporis, blanditiis incidunt,
-          deserunt soluta vero adipisci sequi dolorem, consequuntur minima voluptas accusantium ipsa
-          doloremque nesciunt similique cupiditate natus nemo! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto consequatur rerum eius minus aut consequuntur.
-          <br />
-          Lorem, ipsum dolor sit amet
-          consectetur adipisicing elit. Laudantium molestiae nemo rem quod, soluta beatae minima delectus quisquam, sed magnam omnis
-          qui laboriosam eos ullam numquam ducimus amet ipsa, quaerat nihil reiciendis. Architecto, aut recusandae.
-          <br /><br/>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quod harum provident cupiditate nisi dolor nihil tenetur, unde perferendis a officiis alias corporis excepturi aspernatur vitae culpa dolorem animi. Fuga eligendi, nihil error tenetur doloremque doloribus obcaecati
-          odio architecto quia enim amet quasi, molestiae dolore. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem fugit soluta dolore, explicabo tenetur dolorem mollitia porro laborum. Porro tempore voluptates nihil saepe assumenda iste alias voluptatibus, vero, voluptatum aliquid maiores incidunt magni cumque ad accusantium omnis sint laudantium praesentium eligendi ut voluptatem. At voluptates odio voluptatum quod adipisci unde.
+          {data.content}
         </p>
       </div>
     </div>

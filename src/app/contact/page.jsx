@@ -4,6 +4,11 @@ import ContactForm from 'public/images/contact.png'
 import Button from '@/components/button/Button'
 import Image from 'next/image'
 
+export const metadata = {
+  title: 'Contact page',
+  description: 'We are swift to respond to enquiries',
+}
+
 const Contact = () => {
   return (
     <div className={styles.container}>
