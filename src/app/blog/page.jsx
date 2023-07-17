@@ -8,7 +8,7 @@ import {notFound} from 'next/navigation'
 
 
 async function getData() {
-  const res = await fetch('http://localhost:5000/api/posts', {
+  const res = await fetch('http://localhost:3002/api/posts', {
     cache: 'no-cache'
   })
 
@@ -22,12 +22,12 @@ async function getData() {
 
 
 const Blog = async() => {
-  const {data} = await getData()
+  const data = await getData()
  
   return (
     <div className={styles.mainContainer}>
       {data.map((item)=>(
-         <Link href={`blog/${item.id}`} className={styles.container} key={item.id}>
+         <Link href={`blog/${item._id}`} className={styles.container} key={item._id}>
          <div className={styles.imgContainer}>
             <Image src={item.img} alt="Design" className={styles.image}  width={600} height={350} />
            </div>
