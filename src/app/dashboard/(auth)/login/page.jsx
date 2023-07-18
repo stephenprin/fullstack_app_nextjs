@@ -1,14 +1,16 @@
-'use client'
-import styles from './login.module.css'
-import { signIn } from 'next-auth/react'
+"use client"
 
+import styles from './login.module.css';
+import { useSession, signIn } from 'next-auth/react';
 
 const Login = () => {
   return (
     <div className={styles.container}>
-      <button onClick={()=>signIn("google")}>Login with Google</button>
+      <button className={styles.button} onClick={() => signIn('google')}>
+        Login with Google
+      </button>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

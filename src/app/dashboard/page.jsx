@@ -11,10 +11,11 @@ const Dashboard = () => {
   const fetcher = (...args) => fetch(...args).then(res => res.json())
   const { data, error, isLoading } = useSWR("https://jsonplaceholder.typicode.com/posts", fetcher); 
   
-  return 
+  return (
     <div className={styles.container}>
       Dashboard
-    </div>
+   </div>
+ )
   
 }
 
