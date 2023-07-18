@@ -26,8 +26,8 @@ const Register = () => {
            name,
            email,
            password
-         }, { encoding })
-       })
+         }),
+       });
        res.status === 201 && router.push("/dashboard/login?success=Account has been created successfully")
       
      } catch (error) {
@@ -42,12 +42,12 @@ const Register = () => {
         <input type="text" className={styles.input} placeholder="Username" required/>
         <input type="email" className={styles.input} placeholder="Email" required />
         <input type="password" className={styles.input} placeholder="Password" required />
-        <button type="submit" className={styles.button}>Register</button>
+        <button className={styles.button}>Register</button>
 
       </form>
       
       <div className={styles.error}>
-        {err && "Something went wrong. Please try again later"}
+        {err && err.message}
       </div>
     
 
