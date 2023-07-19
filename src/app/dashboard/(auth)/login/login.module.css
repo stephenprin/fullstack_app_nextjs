@@ -1,4 +1,48 @@
-.button{
-    padding: 1rem 2rem ;
-    background-color: white;
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
 }
+
+.form{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.input{
+    padding: 20px;
+    background-color: transparent;
+    border: 2px solid #bbb;
+    border-radius: 5px;
+    outline: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #a9a6a6;
+}
+
+.button{
+    width: 400px;
+    padding: 20px;
+    cursor: pointer;
+    background-color: #06567b;
+    border: none;
+    border-radius: 5px;
+    color: #eee;
+    font-weight: bold;
+    text-align: center;
+}
+.button2{
+    background-color: #0561ad;
+    width: 400px;
+    padding: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: #eee;
+    font-weight: bold;
+    text-align: center;
+}
+
