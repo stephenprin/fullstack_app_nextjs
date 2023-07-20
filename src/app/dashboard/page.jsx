@@ -19,9 +19,9 @@ const Dashboard = () => {
     <p>Loading....</p>
     
   }
-  // if (session.status === 'unauthenticated') { 
-  //   router?.push("/dashboard/login")
-  // }
+  if (session.status === 'unauthenticated') { 
+    router?.push("/dashboard/login")
+  }
   
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -46,8 +46,20 @@ const Dashboard = () => {
         
       })
       mutate()
+      e.target.reset();
     } catch (error) {
       console.log(error)
+    }
+  }
+
+  const handleDelete = async (id) => { 
+    try {
+      await fetcher(`/api/posts/${id}`, {
+          method: 'DELETE'
+      })
+      mutate()
+    } catch (error) {
+      
     }
   }
   
@@ -62,7 +74,7 @@ const Dashboard = () => {
                   <Image src={post.img} alt={post.title} width={300} height={200} className={styles.img} />
             </div>
             <h2 className={styles.postTitle}>{ post.title}</h2>
-            <button className={styles.delete}>Delete</button>
+            <button className={styles.delete} onClick={()=>handleDelete(post.id)}>Delete</button>
               </div>
             ))}
             <p>Page</p>

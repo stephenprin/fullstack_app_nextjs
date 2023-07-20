@@ -39,3 +39,21 @@ export const POST = async (request) => {
   }
 
 }
+
+export const DELETE = async (request) => {
+    const {id}= request.params
+    
+    try {
+      
+      await connect()
+      await Post.findByIdAndDelete(id)
+
+
+      return new NextResponse("Post has been deleted", { status:201})
+      
+
+  } catch (error) {
+   return new NextResponse("Database error",  {status:500})
+  }
+
+}
