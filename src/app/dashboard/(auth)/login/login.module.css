@@ -35,7 +35,7 @@
     text-align: center;
 }
 .button2{
-    background-color: #0561ad;
+    
     width: 400px;
     padding: 20px;
     cursor: pointer;
@@ -46,3 +46,19 @@
     text-align: center;
 }
 
+.link {
+    text-decoration: underline;
+    color: #7d7c7c;
+  }
+  
+  .link:hover {
+    color: rgb(61, 61, 61);
+  }
+  
+  .google {
+    background-color: rgba(228, 97, 50, 0.72);
+  }
+  
+  .google:hover {
+    background-color: rgba(228, 97, 50, 0.803);
+  }

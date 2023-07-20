@@ -13,8 +13,8 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const name = e.target[0].value
-    const email = e.target[2].value
-    const password = e.target[3].value
+    const email = e.target[1].value
+    const password = e.target[2].value
      try {
 
        const res = await fetch("/api/auth/register", {
@@ -51,7 +51,7 @@ const Register = () => {
       </div>
     
 
-      <Link href="/dashboard/login">Login with an existing account</Link>
+      <Link href="/dashboard/login" className={styles.log}>Login with an existing account</Link>
 
     </div>
   )
