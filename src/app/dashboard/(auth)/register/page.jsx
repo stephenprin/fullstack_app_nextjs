@@ -1,13 +1,15 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from "./register.module.css"
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 
 const Register = () => {
-  const [err, setError] = useState(false)
+  const [err, setError] = useState(false);
+
   
   const router=useRouter()
+
 
 
   const handleSubmit = async (e) => {
@@ -37,7 +39,7 @@ const Register = () => {
   }
   return (
     <div className={styles.container}>
-     
+    
         <form className={styles.form} onSubmit={handleSubmit}>
         <input type="text" className={styles.input} placeholder="Username" required/>
         <input type="email" className={styles.input} placeholder="Email" required />
